@@ -1,0 +1,6 @@
+requests
+scrapetube
+discord.py
+python-dotenv
+mcstatus
+pytz
