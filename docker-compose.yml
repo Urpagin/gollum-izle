@@ -1,0 +1,7 @@
+services:
+  gollum-izle-discord-bot:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "41882:4000"
+    env_file: '.env'

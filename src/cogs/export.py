@@ -10,6 +10,9 @@ import pytz
 from discord.ext import commands
 from discord import app_commands
 
+from src.utils import command_logger
+
+
 def mkdir_exported_channels(path: str):
     """
     Creates a directory: `exported_channels`
@@ -158,10 +161,15 @@ class Export(commands.Cog):
             case "txt":
                 await ctx.response.send_message("Exporting... (might take a long time)")
                 await txt_format(ctx)
+                # This is wrong, the command may be successful or unsuccessful.
+                logging.info(command_logger(self.export, ctx, locals(), format_))
             case "csv":
                 await ctx.response.send_message("Exporting... (might take a long time)")
                 await csv_format(ctx)
+                # This is wrong, the command may be successful or unsuccessful.
+                logging.info(command_logger(self.export, ctx, locals(), format_))
             case _:
+                logging.info(command_logger(self.export, ctx, locals(), format_, success=False))
                 await ctx.response.send_message(f"Invalid format! -> '{format_}'. Couldn't export the channel")
 
 
