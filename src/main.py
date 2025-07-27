@@ -11,6 +11,11 @@ import discord
 from discord.ext import commands
 from dotenv import load_dotenv
 
+load_dotenv()
+DISCORD_TOKEN = os.environ['DISCORD_TOKEN']
+PASTEBIN_TOKEN = os.environ['PASTEEE_TOKEN']
+PRESENCE = os.environ['PRESENCE']
+
 
 class GollumIzle(commands.Bot):
 
@@ -30,6 +35,10 @@ class GollumIzle(commands.Bot):
 
     async def on_ready(self) -> None:
         logging.info(f'{self.user} has connected to Discord!')
+        if PRESENCE:
+            #activity = discord.Activity(type="type!", name=PRESENCE)
+            activity = discord.Game(name=PRESENCE)
+            await bot.change_presence(status=None, activity=activity)
 
 
 def logging_init() -> None:
@@ -54,10 +63,6 @@ def main() -> None:
 
 
 if __name__ == '__main__':
-    load_dotenv()
-    DISCORD_TOKEN = os.environ['DISCORD_TOKEN']
-    PASTEBIN_TOKEN = os.environ['PASTEEE_TOKEN']
-
     main()
 
     bot = GollumIzle()
