@@ -79,4 +79,3 @@ python -m src.main
 * Use temporary files instead of saving files directly to a tangible directory.
 * Add video thumbnail in `/latest` command.
 * Fix `/mcping` favicon not working each time.
-* 
