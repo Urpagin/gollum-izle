@@ -6,7 +6,8 @@ A multipurpose Python bot.
 
 This was the first Discord bot I ever wrote in Python.
 
-This codebase is *old* compared to *now*, and I only verified it by manually testing the commands when putting the code on GitHub. Thus, there may be bugs or inefficiencies hidden in plain sight.
+This codebase is *old* compared to *now*, and I only verified it by manually testing the commands when putting the code on GitHub. 
+Thus, many bugs or inefficiencies may be hidden in plain sight.
 
 Concerning *old* and *now*:
 
