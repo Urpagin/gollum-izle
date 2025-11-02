@@ -1,5 +1,6 @@
 services:
   gollum-izle-discord-bot:
+    container_name: gollum-izle
     build: .
     restart: unless-stopped
     ports:
